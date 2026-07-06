@@ -18,7 +18,7 @@ const PRODUCTS = [
 const CATEGORIES = ["All", ...Array.from(new Set(PRODUCTS.map((p) => p.category)))];
 
 async function callBackend(query, catalog) {
-  const res = await fetch("http://localhost:3001/api/recommend", {
+  const res = await fetch("https://product-recommender-a7kr.vercel.app/api/recommend", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ query, catalog }),
